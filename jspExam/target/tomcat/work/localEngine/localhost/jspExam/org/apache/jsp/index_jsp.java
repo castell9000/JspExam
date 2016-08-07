@@ -59,7 +59,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/login.jsp\">登录</a></b> <br>\r\n");
       out.write("<b><a href=\"");
       out.print(request.getContextPath());
-      out.write("/ListFilme.jsp\">查询电影</a></b>\r\n");
+      out.write("/searchFilm?cur=0\">查询电影</a></b><br>\r\n");
+      out.write("<b><a href=\"");
+      out.print(request.getContextPath());
+      out.write("/selectLanguage\">添加电影</a></b>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

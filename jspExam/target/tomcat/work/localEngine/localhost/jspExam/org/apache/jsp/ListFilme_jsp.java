@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.util.*;
+import com.entity.Film;
 
 public final class ListFilme_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -51,8 +52,8 @@ public final class ListFilme_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write('\r');
-      out.write('\n');
+      out.write("\r\n");
+      out.write("\r\n");
 
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -80,7 +81,77 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("  </head>\r\n");
       out.write("  \r\n");
       out.write("  <body>\r\n");
-      out.write("    This is my JSP page. <br>\r\n");
+      out.write("    ");
+
+    //Film film = new Film();
+    List<Film> list = (List<Film>)request.getAttribute("filmList");
+     
+      out.write("\r\n");
+      out.write("     \r\n");
+      out.write("     <table border=\"1\" cellspacing=\"0\" cellpadding=\"8\" bordercolor=\"silver\" align=\"center\" >\r\n");
+      out.write("    \t\t<tr>\r\n");
+      out.write("    \t\t\t<td colspan=\"6\" align=\"center\" bgcolor=\"#E8E8E8\">电影信息</td>\r\n");
+      out.write("    \t\t</tr>\r\n");
+      out.write("    \t\t<tr>\r\n");
+      out.write("    \t\t\t<td>ID</td>\r\n");
+      out.write("\t\t    \t<td>名称</td>\r\n");
+      out.write("\t\t    \t<td>语言</td>\r\n");
+      out.write("\t\t    \t<td>描述</td>\r\n");
+      out.write("\t\t    \t<td>删除</td>\r\n");
+      out.write("\t\t    \t<td>编辑</td>\r\n");
+      out.write("   \t\t\t</tr>\r\n");
+      out.write("    \t\t");
+for(Film film:list){
+      out.write("\r\n");
+      out.write("    \t\t<tr>\r\n");
+      out.write("    \t\t\t<td>");
+      out.print(film.getFilm_id() );
+      out.write("</td>\r\n");
+      out.write("    \t\t\t<td>");
+      out.print(film.getTitle() );
+      out.write("</td>\r\n");
+      out.write("    \t\t\t<td>");
+      out.print(film.getLanguageName() );
+      out.write("</td>\r\n");
+      out.write("    \t\t\t<td>");
+      out.print(film.getDescription() );
+      out.write("</td>\r\n");
+      out.write("    \t\t\t<td><b><a href=\"");
+      out.print(request.getContextPath());
+      out.write("/deleteFilm?id=");
+      out.print(film.getFilm_id() );
+      out.write("\">删除</a></b></td>\r\n");
+      out.write("    \t\t\t <td><b><a href=\"");
+      out.print(request.getContextPath());
+      out.write("/editFilm?title=");
+      out.print(film.getTitle() );
+      out.write("&description=");
+      out.print(film.getDescription() );
+      out.write("&name=");
+      out.print(film.getLanguageName() );
+      out.write("\">编辑</a></b></td>\r\n");
+      out.write("    \t\t\t");
+      out.write("\r\n");
+      out.write("    \t\t</tr>\r\n");
+      out.write("    \t\t");
+} 
+      out.write(">\r\n");
+      out.write("\t\t\t<tr>\r\n");
+      out.write("    \t\t\t<td colspan=\"6\" align=\"center\">\r\n");
+      out.write("    \t\t\t\t<b><a href=\"");
+      out.print(request.getContextPath());
+      out.write("/searchFilm?cur=");
+      out.print(Integer.parseInt(request.getParameter("cur"))-1);
+      out.write("\">上页</a></b>\r\n");
+      out.write("    \t\t\t\t<b><a href=\"");
+      out.print(request.getContextPath());
+      out.write("/searchFilm?cur=");
+      out.print(Integer.parseInt(request.getParameter("cur"))+1);
+      out.write("\">下页</a></b>\r\n");
+      out.write("    \t\t\t</td>\r\n");
+      out.write("    \t\t</tr>\t\r\n");
+      out.write("    \t</table>\r\n");
+      out.write("\r\n");
       out.write("  </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

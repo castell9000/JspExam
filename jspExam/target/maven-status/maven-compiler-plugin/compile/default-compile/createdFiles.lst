@@ -1,0 +1,8 @@
+com\entity\Film.class
+com\servlet\LoginServlet.class
+com\filter\PermissionFilter.class
+com\entity\Customer.class
+com\service\UserService.class
+com\dao\impl\UserDaoImpl.class
+com\dao\UserDao.class
+com\filter\EnclodingFilter.class

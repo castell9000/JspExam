@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.entity.Film" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,6 +24,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+    <%
+    //Film film = new Film();
+    List<Film> list = (List<Film>)request.getAttribute("filmList");
+     %>
+     
+     <table border="1" cellspacing="0" cellpadding="8" bordercolor="silver" align="center" >
+    		<tr>
+    			<td colspan="6" align="center" bgcolor="#E8E8E8">电影信息</td>
+    		</tr>
+    		<tr>
+    			<td>ID</td>
+		    	<td>名称</td>
+		    	<td>语言</td>
+		    	<td>描述</td>
+		    	<td>删除</td>
+		    	<td>编辑</td>
+   			</tr>
+    		<%for(Film film:list){%>
+    		<tr>
+    			<td><%=film.getFilm_id() %></td>
+    			<td><%=film.getTitle() %></td>
+    			<td><%=film.getLanguageName() %></td>
+    			<td><%=film.getDescription() %></td>
+    			<td><b><a href="<%=request.getContextPath()%>/deleteFilm?id=<%=film.getFilm_id() %>">删除</a></b></td>
+    			 <td><b><a href="<%=request.getContextPath()%>/editFilm?title=<%=film.getTitle() %>&description=<%=film.getDescription() %>&name=<%=film.getLanguageName() %>">编辑</a></b></td>
+    			<%-- <td><b><a href="<%=request.getContextPath()%>/editFilm?film=<%=film%>">编辑</a></b></td> --%>
+    		</tr>
+    		<%} %>>
+			<tr>
+    			<td colspan="6" align="center">
+    				<b><a href="<%=request.getContextPath()%>/searchFilm?cur=<%=Integer.parseInt(request.getParameter("cur"))-1%>">上页</a></b>
+    				<b><a href="<%=request.getContextPath()%>/searchFilm?cur=<%=Integer.parseInt(request.getParameter("cur"))+1%>">下页</a></b>
+    			</td>
+    		</tr>	
+    	</table>
+
   </body>
 </html>

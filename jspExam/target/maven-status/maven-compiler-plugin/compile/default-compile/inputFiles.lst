@@ -1,7 +1,14 @@
+D:\Study\JspExam\jspExam\src\main\java\com\entity\Film.java
 D:\Study\JspExam\jspExam\src\main\java\com\filter\EnclodingFilter.java
-D:\Study\JspExam\jspExam\src\main\java\com\entity\Customer.java
+D:\Study\JspExam\jspExam\src\main\java\com\servlet\SearchFilm.java
+D:\Study\JspExam\jspExam\src\main\java\com\entity\Language.java
+D:\Study\JspExam\jspExam\src\main\java\com\util\ConnectorFactory.java
 D:\Study\JspExam\jspExam\src\main\java\com\service\UserService.java
+D:\Study\JspExam\jspExam\src\main\java\com\servlet\AddFilm.java
+D:\Study\JspExam\jspExam\src\main\java\com\dao\impl\UserDaoImpl.java
+D:\Study\JspExam\jspExam\src\main\java\com\entity\Customer.java
+D:\Study\JspExam\jspExam\src\main\java\com\servlet\SelectLanguage.java
 D:\Study\JspExam\jspExam\src\main\java\com\servlet\LoginServlet.java
 D:\Study\JspExam\jspExam\src\main\java\com\filter\PermissionFilter.java
+D:\Study\JspExam\jspExam\src\main\java\com\servlet\EditFilm.java
 D:\Study\JspExam\jspExam\src\main\java\com\dao\UserDao.java
-D:\Study\JspExam\jspExam\src\main\java\com\dao\impl\UserDaoImpl.java

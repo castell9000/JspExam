@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 				//response.setHeader("Refresh", "2;welcome.jsp");//重定向
 				//转发
 				String path = request.getContextPath() + "/logoutServlet"; 
-				request.setAttribute("msg", "登录成功，欢迎你:" + user.getFirst_name() + "<a href=" + path + ">登出</a>");
+				request.setAttribute("msg", "登录成功，欢迎你:" );
 				rd = request.getRequestDispatcher("/welcome.jsp");
 				rd.forward(request, response);
 				

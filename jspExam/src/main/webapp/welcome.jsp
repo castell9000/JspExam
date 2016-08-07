@@ -24,8 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <%=request.getAttribute("msg") %>
-    <%= request.getParameter("username") %><br>
     <%=session.getAttribute("username") %>
-    <a href="<%=request.getContextPath() %>/index.jsp">index</a>
+    <a href="<%=request.getContextPath() %>/index.jsp">主页面</a>
   </body>
 </html>

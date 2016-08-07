@@ -84,14 +84,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.print(request.getAttribute("msg") );
       out.write("\r\n");
       out.write("    ");
-      out.print( request.getParameter("username") );
-      out.write("<br>\r\n");
-      out.write("    ");
       out.print(session.getAttribute("username") );
       out.write("\r\n");
       out.write("    <a href=\"");
       out.print(request.getContextPath() );
-      out.write("/index.jsp\">index</a>\r\n");
+      out.write("/index.jsp\">主页面</a>\r\n");
       out.write("  </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
