@@ -116,11 +116,7 @@ for(Film film:list){
       out.write("    \t\t\t<td>");
       out.print(film.getDescription() );
       out.write("</td>\r\n");
-      out.write("    \t\t\t<td><b><a href=\"");
-      out.print(request.getContextPath());
-      out.write("/deleteFilm?id=");
-      out.print(film.getFilm_id() );
-      out.write("\">删除</a></b></td>\r\n");
+      out.write("    \t\t\t<td><b><a href=\"#\">删除</a></b></td>\r\n");
       out.write("    \t\t\t <td><b><a href=\"");
       out.print(request.getContextPath());
       out.write("/editFilm?title=");
@@ -138,11 +134,21 @@ for(Film film:list){
       out.write(">\r\n");
       out.write("\t\t\t<tr>\r\n");
       out.write("    \t\t\t<td colspan=\"6\" align=\"center\">\r\n");
+      out.write("    \t\t\t");
+if(Integer.parseInt(request.getParameter("cur")) == 0){ 
+      out.write("\r\n");
+      out.write("    \t\t\t\t<b>已是第一页</b>\r\n");
+      out.write("    \t\t\t");
+}else{ 
+      out.write("\r\n");
       out.write("    \t\t\t\t<b><a href=\"");
       out.print(request.getContextPath());
       out.write("/searchFilm?cur=");
       out.print(Integer.parseInt(request.getParameter("cur"))-1);
       out.write("\">上页</a></b>\r\n");
+      out.write("    \t\t\t");
+} 
+      out.write("\r\n");
       out.write("    \t\t\t\t<b><a href=\"");
       out.print(request.getContextPath());
       out.write("/searchFilm?cur=");

@@ -46,6 +46,7 @@ public class EditFilm extends HttpServlet {
 		root.put("description", description);
 		root.put("name", name);
 		Template template = cfg.getTemplate("editFilm.ftl");
+		System.out.println(template.getEncoding());
 		response.setContentType("text/html; charset=" + template.getEncoding());
 		Writer out = response.getWriter();
 		try {

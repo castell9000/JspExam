@@ -91,10 +91,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("    \t\t\t<td>用户名：</td>\r\n");
       out.write("    \t\t\t<td><input type=\"text\" name=\"username\"/></td>\t\r\n");
       out.write("    \t\t</tr>\r\n");
-      out.write("    \t\t<tr>\r\n");
-      out.write("    \t\t\t<td>密码：</td>\r\n");
-      out.write("    \t\t\t<td><input type=\"password\" name=\"userpass\"/></td>\t\t\t\r\n");
-      out.write("    \t\t</tr>\r\n");
       out.write("\t\t\t<tr>\r\n");
       out.write("    \t\t\t<td colspan=\"2\" align=\"center\">\r\n");
       out.write("    \t\t\t\t<input type=\"submit\" value=\"提交\"/>\r\n");

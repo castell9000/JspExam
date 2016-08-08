@@ -47,14 +47,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<td><%=film.getTitle() %></td>
     			<td><%=film.getLanguageName() %></td>
     			<td><%=film.getDescription() %></td>
-    			<td><b><a href="<%=request.getContextPath()%>/deleteFilm?id=<%=film.getFilm_id() %>">删除</a></b></td>
+    			<td><b><a href="#">删除</a></b></td>
     			 <td><b><a href="<%=request.getContextPath()%>/editFilm?title=<%=film.getTitle() %>&description=<%=film.getDescription() %>&name=<%=film.getLanguageName() %>">编辑</a></b></td>
     			<%-- <td><b><a href="<%=request.getContextPath()%>/editFilm?film=<%=film%>">编辑</a></b></td> --%>
     		</tr>
     		<%} %>>
 			<tr>
     			<td colspan="6" align="center">
+    			<%if(Integer.parseInt(request.getParameter("cur")) == 0){ %>
+    				<b>已是第一页</b>
+    			<%}else{ %>
     				<b><a href="<%=request.getContextPath()%>/searchFilm?cur=<%=Integer.parseInt(request.getParameter("cur"))-1%>">上页</a></b>
+    			<%} %>
     				<b><a href="<%=request.getContextPath()%>/searchFilm?cur=<%=Integer.parseInt(request.getParameter("cur"))+1%>">下页</a></b>
     			</td>
     		</tr>	
